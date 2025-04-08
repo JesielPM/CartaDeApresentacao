@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Importação de fonte personalizada -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     /* Variáveis CSS para o modo noturno (padrão) com acentos verdes */
     :root {
@@ -254,17 +255,19 @@
         <p>Jesiel Matos</p>
       </div>
       <div class="header-photo">
-        <img src="https://github.com/citsakti/jesiel/blob/main/e37cd146-ee72-47a1-9cdd-a679762fae7a.jpg?raw=true" alt="Foto de Jesiel Matos">
+        <!-- Nova URL da foto -->
+        <img src="https://github.com/JesielPM/CartaDeApresentacao/blob/main/WhatsApp%20Image%202025-04-03%20at%2012.15.44.jpeg?raw=true" alt="Foto de Jesiel Matos">
       </div>
     </div>
   </div>
 
   <div class="container">
-    <!-- Botões "Expandir Tudo", "Recolher Tudo" e "Dia/Noite" -->
+    <!-- Botões "Expandir Tudo", "Recolher Tudo", "Dia/Noite" e "Versão PDF" -->
     <div class="button-group">
       <button class="expand-collapse-button" onclick="expandAll()">🔽 Expandir Tudo</button>
       <button class="expand-collapse-button" onclick="collapseAll()">🔼 Recolher Tudo</button>
       <button id="mode-toggle" onclick="toggleMode()">☀️Dia</button>
+      <button class="toggle-button" onclick="downloadPDF()">🖨️ Versão PDF</button>
     </div>
 
     <!-- Seção: Da Personalidade e Habilidades -->
@@ -409,6 +412,17 @@
       } else {
         modeButton.textContent = "🌛Modo Noturno";
       }
+    }
+
+    // Função para download do PDF
+    function downloadPDF() {
+      const link = document.createElement('a');
+      // Usando a URL raw para forçar o download do PDF
+      link.href = 'https://raw.githubusercontent.com/JesielPM/CartaDeApresentacao/6df8c650a9bf5282e32e0abc34a5f4fae54b50dc/CARTA%20DE%20APRESENTA%C3%87%C3%83O%20EM%20PDF.pdf';
+      link.download = 'CARTA_DE_APRESENTACAO.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
 
     window.addEventListener('load', function(){
